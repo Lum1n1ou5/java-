@@ -1,0 +1,38 @@
+public class Person {
+    String name;
+    int age;
+    double height;
+
+
+
+
+    public void study(){
+        System.out.println("好好学习");
+    }
+
+    //显式便携空构造器：
+    public Person(){
+        System.out.println("空构造器");
+        age = 19;
+        name = "Jimmy";
+        height = 180.65;
+    }
+
+//    public Person(int a,String b,double c){
+//        age = a;
+//        name = b;
+//        height = c;
+//    }
+
+    //如果构造器的参数名字跟属性名字重名，就会发生就进原则
+    //如果重名，那就要需要加入this。来修饰
+
+    public Person(int age,String name,double height){
+        this.age = age;
+        this.name = name;
+        this.height = height;
+    }
+
+
+
+}

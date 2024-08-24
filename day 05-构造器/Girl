@@ -1,0 +1,22 @@
+public class Girl {
+
+
+    private int age;
+    String name;
+
+    //给age提供一个赋值的方法：
+    public void shezhiAge(int age){
+        if (age > 30){
+            this.age = 18;
+
+        }else{
+            this.age = age;
+        }
+
+    }
+
+    //给age提供一个读取值的方法：
+    public int duquAge(){
+        return age;
+    }
+}

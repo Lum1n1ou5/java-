@@ -1,0 +1,21 @@
+public class Test02 {
+    public static void main(String[] args) {
+        /*创建一个Person类的对象
+        new Person();
+        Person() -> 空构造方法
+        new关键字对方法进行调用，
+        构造器的作用：底层帮我们创建对象，在创建对象以后进行初始化操作
+
+        如果一个类没有显式便携构造器的话，那么系统就会默认添加一个
+        调用构造器以后，对对象进行初始化操作，把对象的地址返回给p
+        尽量保证空构造器的存在
+        */
+        Person p1 = new Person(18,"Yuki",180);
+        System.out.println(p1.age);
+
+        Person p2 = new Person(20,"Jimmy",170);
+        p2.study();
+        System.out.println(p2.age);
+
+    }
+}

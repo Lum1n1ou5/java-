@@ -1,0 +1,11 @@
+public class girlTest {
+    public static void main(String[] args) {
+
+        Girl g = new Girl();
+
+        //开挂获取已经封装完了的数据
+        //高内聚，低耦合
+        g.shezhiAge(1);
+        System.out.println(g.duquAge());
+    }
+}

@@ -24,12 +24,18 @@ public class Main {
     }
 }
 
+
+
 public class Person {
+//特性-属性-名词
     int age;
     String name;
     double height;
     double weight;
 
+
+    //行为-方法-动词
+    //定义一个方法：
     //这是方法
     public void eat(){
         System.out.println("eat");

@@ -1,3 +1,39 @@
+/*
+前景提要，private的写法
+*/
+public class Counter {
+    String name;
+    int age;
+    double weight;
+    private double height = 11;
+
+    public Counter(String name, int age, double weight) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+   
+    public void setHeight(double height){
+        this.height = height;
+    }
+
+    public double getHeight(){
+        return height;
+    }
+
+    public static void main(String[] args) {
+        Counter practise = new Counter("time", 11, 11);
+        
+        System.out.println(practise.name);
+        System.out.println(practise.getHeight());
+
+   } 
+   
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 public class Static {
     int id;
     static int sid;
@@ -28,7 +64,40 @@ public class Static {
 
 
 
-//------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Counter {
+    // 静态变量，用于记录实例化的次数
+    private static int count = 0;
+
+    // 构造方法
+    public Counter() {
+        count++; // 每次创建实例时，增加计数器
+    }
+
+    // 静态方法，用于获取创建实例的总次数
+    public static int getCount() {
+        return count;
+    }
+
+    // 实例方法，用于获取当前实例的编号
+    public int getInstanceNumber() {
+        return count; // 返回当前实例的编号（计数器值）
+    }
+
+    public static void main(String[] args) {
+        Counter c1 = new Counter(); // 创建第一个实例
+        Counter c2 = new Counter(); // 创建第二个实例
+
+        System.out.println("Total instances created: " + Counter.getCount()); // 使用静态方法获取总实例数
+        System.out.println("Instance number of c1: " + c1.getInstanceNumber()); // 实例方法获取c1的编号
+        System.out.println("Instance number of c2: " + c2.getInstanceNumber()); // 实例方法获取c2的编号
+    }
+}
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /*
 静态变量（类变量）:

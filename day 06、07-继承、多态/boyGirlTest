@@ -1,0 +1,10 @@
+public class boyGirlTest {
+    public static void main(String[] args) {
+        Boy boy = new Boy();
+        boy.setAge(10);
+        boy.setHeight(160);
+        boy.setWeight(90);
+
+        System.out.println(boy.getAge());
+    }
+}

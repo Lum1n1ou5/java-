@@ -1,0 +1,102 @@
+public class Static {
+    int id;
+    static int sid;
+
+    public static void main(String[] args) {
+        Static s1 = new Static();
+        s1.id = 10;
+        s1.sid = 10;
+
+        Static s2 = new Static();
+        s2.id = 20;
+        s2.sid = 20;
+
+        Static s3 = new Static();
+        s3.id = 30;
+        s3.sid = 30;
+
+        System.out.println(s1.id);  // 输出：10
+        System.out.println(s2.id);  // 输出：20
+        System.out.println(s3.id);  // 输出：30
+
+        System.out.println(s1.sid); // 输出：30
+        System.out.println(s2.sid); // 输出：30
+        System.out.println(s3.sid); // 输出：30
+    }
+}
+
+
+
+
+//------------------------------------------------------------------------
+
+/*
+静态变量（类变量）:
+
+用 static 修饰的变量被所有该类的实例共享。
+它们在类加载时创建，不依赖于任何实例。
+可以通过类名直接访问，无需创建对象。
+
+class Example {
+static int count = 0;
+}
+
+静态方法：
+
+不需要创建类的实例就可以调用。
+不能直接访问非静态成员（除非创建一个实例）。
+通常用于实用工具方法。
+
+class MathUtils {
+static int add(int a, int b) {
+    return a + b;
+}
+}
+
+静态代码块：
+
+用于类的静态初始化。
+在类加载时执行，只执行一次。
+
+class Example {
+static {
+    System.out.println("Class is being loaded.");
+}
+}
+
+静态内部类：
+
+不依赖于外部类的实例。
+不能直接访问外部类的非静态成员。
+
+class OuterClass {
+static class InnerClass {
+    // ...
+}
+}
+
+静态导入：
+
+允许静态成员（变量和方法）在没有类限定的情况下使用。
+
+import static java.lang.Math.PI;
+// 现在可以直接使用 PI，而不是 Math.PI
+
+常量定义：
+
+结合 final 使用，定义常量。
+
+class Constants {
+public static final double PI = 3.14159;
+}
+
+
+使用 static 的主要优点：
+
+内存效率：静态成员不需要多个副本。
+实用性：无需创建实例即可使用。
+组织性：可以将相关的方法和变量组织在一起。
+
+需要注意的是，过度使用 static 可能导致代码难以测试和维护，因为它增加了全局状态。在面向对象设计中，应谨慎使用。
+
+ */

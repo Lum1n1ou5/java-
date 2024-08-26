@@ -99,6 +99,48 @@ public class Counter {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+public class Demo {
+    
+    int id;
+    static int sid;
+    
+    public void a(){
+        System.out.println(id);
+        System.out.println(sid);
+        System.out.println("------a");
+    }
+
+    static public void b(){
+        //System.out.println(this.id); 也不能在静态方法中使用this关键字
+        //a(); //在静态方法中不能访问非静态的属性
+        //System.out.println(id);//在静态方法中不能访问非静态的属性
+        System.out.println(sid);
+        System.out.println("------b");
+    }
+
+    public static void main(String[] args) {
+       
+        Demo d = new Demo();
+
+         //5.非静态的方法可以用对象名.方法名去调用
+        d.a();
+        //6.静态方法可以用   对象名.方法名去调用
+        //也可以用 类名.方法名
+        Demo.b();
+        d.b();
+    }
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 /*
 静态变量（类变量）:
 

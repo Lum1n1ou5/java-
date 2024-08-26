@@ -1,0 +1,9 @@
+public class Boy extends Girl{//子类Boy继承Girl
+
+    public static void main(String[] args) {
+        Girl g = new Girl();
+        g.printSomething();
+
+    }
+
+}

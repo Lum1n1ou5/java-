@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class BookStore {
+    public static void main(String[] args) {
+
+
+        System.out.println("--欢迎来到书城--");
+        System.out.println("1.查看书籍");
+        System.out.println("2.录入书籍");
+        System.out.println("3.删除书籍");
+        System.out.println("4.退出系统");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入你所需的功能：");
+        int choice = sc.nextInt();
+
+        Boolean xuanze = true;
+        while(xuanze){
+            if (choice == 1) {
+                System.out.println();
+            }
+
+            if (choice == 2) {
+                System.out.println();
+            }
+
+            if (choice == 3) {
+                System.out.println();
+            }
+
+            if (choice == 4) {
+                xuanze = false;
+            }
+
+        }
+
+    }
+}

@@ -1,0 +1,37 @@
+class Parent {
+    int age = 40;
+
+    Parent() {
+        System.out.println("Parent constructor called");
+    }
+
+    void showAge() {
+        System.out.println("Parent age: " + age);
+    }
+}
+
+class Child extends Parent {
+    int age = 20;
+
+    Child() {
+        super(); // 调用父类的构造函数
+        System.out.println("Child constructor called");
+    }
+
+    void showAge() {
+        System.out.println("Child age using this: " + this.age); // 调用当前类的age
+        System.out.println("Parent age using super: " + super.age); // 调用父类的age
+    }
+
+    void display() {
+        this.showAge(); // 调用当前类的showAge()方法
+        super.showAge(); // 调用父类的showAge()方法
+    }
+}
+
+public class thisAndsuper {
+    public static void main(String[] args) {
+        Child child = new Child(); // 创建Child对象
+        child.display(); // 调用display方法
+    }
+}

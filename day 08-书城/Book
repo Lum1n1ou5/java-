@@ -1,3 +1,46 @@
 public class Book {
-    
+    //属性：
+    //书籍编号：
+    private int bookNumber;
+
+    //书籍名称：
+    private String bookName;
+
+    //书籍作者：
+    private String bookAuthor;
+
+    public void setBookNumber(int bookNumber) {
+        this.bookNumber = bookNumber;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public void setBookAuthor(String bookAuthor) {
+        this.bookAuthor = bookAuthor;
+    }
+
+    public int getBookNumber() {
+        return bookNumber;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public String getBookAuthor() {
+        return bookAuthor;
+    }
+
+    //构造器：
+    public Book(int bookNumber, String bookName, String bookAuthor) {
+        this.bookNumber = bookNumber;
+        this.bookName = bookName;
+        this.bookAuthor = bookAuthor;
+    }
+
+    public Book() { // 空构造器
+
+    }
 }

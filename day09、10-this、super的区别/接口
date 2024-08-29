@@ -1,0 +1,25 @@
+// 定义接口
+interface Animal {
+    void eat(); // 抽象方法
+    void sleep(); // 抽象方法
+}
+
+// 接口的实现类
+class Dog implements Animal {
+    public void eat() { // 提供接口方法的实现
+        System.out.println("Dog is eating");
+    }
+
+    public void sleep() { // 提供接口方法的实现
+        System.out.println("Dog is sleeping");
+    }
+}
+
+// 使用接口
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.sleep();
+    }
+}

@@ -1,3 +1,14 @@
+/*
+1.类是类，接口是接口
+2.接口里面没有构造器
+3.interface可以声明接口
+4.before JDK1.8：1）常量：固定修饰符：public static final
+                 2）抽象方法：固定修饰符：public abstract
+5.一旦实现也一个接口，要重写接口当中的全部抽象方法
+6.java只有单继承，但是java有多实现
+*/
+
+
 // 定义接口
 interface Animal {
     void eat(); // 抽象方法
@@ -23,3 +34,94 @@ public class Main {
         dog.sleep();
     }
 }
+
+
+
+//-------------------------------------------------------------------------------------
+interface Vehicle {
+    void start();
+
+    // 默认方法提供通用实现
+    default void stop() {
+        System.out.println("Vehicle is stopping");
+    }
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car is starting");
+    }
+}
+
+class Bicycle implements Vehicle {
+    public void start() {
+        System.out.println("Bicycle is starting");
+    }
+
+    // 可以选择重写默认方法
+    @Override
+    public void stop() {
+        System.out.println("Bicycle is stopping by applying brakes");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Car();
+        Vehicle bicycle = new Bicycle();
+        Vehicle car = new Car();
+
+        //Car car = new Car();
+
+        car.start();
+
+
+
+    }
+}
+//-------------------------------------------------------------------------------------
+
+/**
+实战当中怎么运用接口：
+*/
+
+
+// 定义支付接口
+interface Payment {
+    void processPayment(double amount);
+}
+
+// 信用卡支付实现
+class CreditCardPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing credit card payment of $" + amount);
+    }
+}
+
+// PayPal支付实现
+class PayPalPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing PayPal payment of $" + amount);
+    }
+}
+
+// 比特币支付实现
+class BitcoinPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing Bitcoin payment of $" + amount);
+    }
+}
+
+// 使用接口的支付系统
+public class PaymentSystem {
+    public static void main(String[] args) {
+        Payment payment1 = new CreditCardPayment();
+        Payment payment2 = new PayPalPayment();
+        Payment payment3 = new BitcoinPayment();
+
+        payment1.processPayment(100.0);
+        payment2.processPayment(200.0);
+        payment3.processPayment(300.0);
+    }
+}
+

@@ -1,0 +1,58 @@
+/*
+* toString可以将对象转换为字符串表示形式
+*如果不重写，会出现getClass().getName() + "@" + Integer.toHexString(hashCode())
+*如果重写，并且才会返回可读性的内容
+*
+* */
+
+
+class Student {
+    private String name;
+    private int age;
+    private double height;
+
+    public void setName(){
+        this.name = name;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public void setHeight(){
+        this.height = height;
+
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getAge(){
+        return age;
+    }
+
+    public double getHeight(){
+        return height;
+    }
+
+    public Student(String name, int age, double height){
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
+
+    @Override
+    public String toString(){
+        return "Name: " + name + " Age: " + age + " Height: " + height;
+    }
+}
+
+
+public class Test {
+    public static void main(String[] args) {
+        Student s = new Student("11",11,111);
+        System.out.println(s);
+
+    }
+}

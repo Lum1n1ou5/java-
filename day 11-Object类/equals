@@ -1,0 +1,60 @@
+class Phone {
+    //属性：
+    private String brand;
+    private double price;
+    private int year;
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public Phone() {
+
+    }
+
+    public Phone(String brand, double price, int year) {
+        this.brand = brand;
+        this.price = price;
+        this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "牌子是" + brand + "价格是" + price + "年份是" + year;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Phone phone1 = new Phone("huawei", 1201, 2020);
+        Phone phone2 = new Phone("huawei", 1202, 2020);
+
+        System.out.println(phone1 == phone2); //比较地址
+        System.out.println(phone1 = phone2); //两种数值一样
+
+        System.out.println(phone1.equals(phone2)); //用Object类里面的equals方法进行比较
+    }
+
+}

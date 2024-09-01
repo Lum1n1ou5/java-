@@ -1,0 +1,17 @@
+/*
+throws 用于声明方法可能抛出的异常，它不会捕获异常，而是将异常抛给调用者处理。
+*/
+
+public class ThrowsExample {
+    public static void main(String[] args) {
+        try {
+            riskyMethod();
+        } catch (Exception e) {
+            System.out.println("捕获的异常: " + e);
+        }
+    }
+
+    public static void riskyMethod() throws Exception {
+        throw new Exception("这是一个异常！");
+    }
+}

@@ -1,0 +1,13 @@
+/*
+try-catch 是异常处理的核心结构。try 块包含可能会抛出异常的代码，而 catch 块用于捕获并处理这些异常。
+*/
+
+public class TryCatchExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0; // 可能引发 ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("异常: 不能除以零！");
+        }
+    }
+}

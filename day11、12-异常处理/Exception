@@ -1,0 +1,13 @@
+public class CatchAllExample {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[3]); // 可能引发异常
+            int result = 10 / 0; // 可能引发异常
+        } catch (Exception e) {
+            System.out.println("捕获的异常: " + e);
+        } finally {
+            System.out.println("无论是否发生异常，最终都会执行。");
+        }
+    }
+}

@@ -1,0 +1,18 @@
+/*
+多重 catch 块允许你捕获和处理不同类型的异常。
+*/
+
+
+public class MultiCatchExample {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[3]); // ArrayIndexOutOfBoundsException
+            int result = 10 / 0; // ArithmeticException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("异常: 数组索引超出范围！");
+        } catch (ArithmeticException e) {
+            System.out.println("异常: 不能除以零！");
+        }
+    }
+}

@@ -1,0 +1,11 @@
+/*throw 用于显式地抛出一个异常，它通常与条件语句结合使用，当某个条件满足时抛出异常。
+*/
+public class ThrowExample {
+    public static void main(String[] args) {
+        int num = -1;
+        
+        if (num < 0) {
+            throw new IllegalArgumentException("数字不能为负数！");
+        }
+    }
+}

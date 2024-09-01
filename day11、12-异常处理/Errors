@@ -1,0 +1,13 @@
+public class ErrorExample {
+    public static void main(String[] args) {
+        try {
+            recursiveMethod(); // 导致 StackOverflowError
+        } catch (StackOverflowError e) {
+            System.out.println("错误: 栈内存溢出！");
+        }
+    }
+
+    public static void recursiveMethod() {
+        recursiveMethod(); // 无限递归调用
+    }
+}

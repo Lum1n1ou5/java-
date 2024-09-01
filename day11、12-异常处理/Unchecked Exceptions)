@@ -1,0 +1,22 @@
+public class RuntimeExceptionExample {
+    public static void main(String[] args) {
+        try {
+            String str = null;
+            System.out.println(str.length());
+        } catch (NullPointerException e) {
+            System.out.println("异常: 尝试访问空对象的属性！");
+        }
+    }
+}
+
+/-------------------------------------------------------------------------------------
+public class ArrayIndexOutOfBoundsExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[3]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("异常: 数组索引超出范围！");
+        }
+    }
+}

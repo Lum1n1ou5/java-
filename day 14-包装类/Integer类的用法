@@ -1,0 +1,24 @@
+public class Test {
+    public static void main(String[] args) {
+        Integer i1 = new Integer(11);
+        Integer i2 = new Integer(12);
+        int i3 = i1.compareTo(i2);
+        if (i3 < 0){
+            System.out.println("i1 < i2");
+        }else if (i3 > 0){
+            System.out.println("i1 > i2");
+        }
+
+        Integer i4 = new Integer(1111);
+        Integer i5 = new Integer(1122);
+        System.out.println(i4 == i5);
+        //如果自动装箱值在-128~127之间，比较的就是具体的数值
+        // 否则对比的是i4跟i5之间的地址
+        Boolean i6 = i4.equals(i5);
+        System.out.println(i6);
+
+        
+        Integer i10 = 130;
+        System.out.println(i10.toString());
+    }
+}

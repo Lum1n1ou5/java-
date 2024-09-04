@@ -1,0 +1,43 @@
+import java.util.Date;
+
+public class Test {
+    public static void main(String[] args) {
+        Date d = new Date();
+        System.out.println(d);
+        System.out.println(d.getTime());
+        System.out.println(d.toString());
+        System.out.println(d.toGMTString());
+
+        long StartTime = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            System.out.println(i);
+        }
+        long EndTime = System.currentTimeMillis();
+        System.out.println(EndTime - StartTime);
+    }
+}
+
+
+//------------------------------------------------------------------------------
+//什么是until跟sql
+import java.sql.Date;
+
+public class Test {
+    public static void main(String[] args) {
+        Date d = new Date();
+        System.out.println(d);
+
+        //util跟sql可以互相转换
+        //util --> sql:
+        java.util.Date date = new java.util.Date();
+        //方式一：向下转型
+        Date date1 = (Date) date;
+        //方式二：利用构造器
+        Date date2 = new Date(date.getTime());
+
+
+        //sql --> util:
+        java.util.Date date3 = d;
+
+    }
+}

@@ -1,0 +1,120 @@
+//这里是.add方法的演示
+//boolean add(E e)
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Fruit {
+    // 可以在这里定义一些公共属性或方法
+    public String name;
+}
+
+class Apple extends Fruit {
+    private String name;
+
+    public Apple(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}
+
+public class Test {
+public static void main(String[] args) {
+    List<Fruit> fruits = new ArrayList<>();
+    System.out.println(fruits.add(new Apple("红富士苹果")));
+    System.out.println(fruits.add(new Apple("青苹果")));
+    System.out.println(fruits.add(new Apple("奶牛苹果")));
+    for (Fruit fruit : fruits){
+        System.out.println(fruit);
+    }
+}
+}
+
+
+/*输出结果如下：
+true
+true
+true
+红富士苹果
+青苹果
+奶牛苹果
+*/
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+//这里是.addAll方法的演示
+//boolean addAll(Collection<? extends E> c)
+
+import java.util.ArrayList;
+import java.util.List;
+
+//创建一个空的Fruit类
+class Fruit{
+
+}
+
+//苹果类继承水果类
+class Apple extends Fruit{
+    private String name;
+
+    public Apple(String name){
+        this.name = name;
+    }
+
+    public String toString(){
+        return name;
+    }
+}
+
+//香蕉类继承水果类
+class Banana extends Fruit{
+    private String name;
+    public Banana(String name){
+        this.name = name;
+    }
+
+    public String toString(){
+        return name;
+    }
+
+}
+
+public class Test {
+    public static void main(String[] args) {
+    List<Apple> apples = new ArrayList<Apple>();
+    //苹果集合
+    apples.add(new Apple("红富士苹果"));
+    apples.add(new Apple("青苹果"));
+    apples.add(new Apple("冰糖心苹果"));
+    //香蕉集合
+    List<Banana> bananas = new ArrayList<Banana>();
+    bananas.add(new Banana("高山香蕉"));
+    bananas.add(new Banana("小米香蕉"));
+    bananas.add(new Banana("海南香蕉"));
+    //创建一个香蕉集合
+    List<Fruit> fruits = new ArrayList<>();
+
+        System.out.println(fruits.addAll(apples));
+        System.out.println(fruits.addAll(bananas));
+
+    for (Fruit fruit : fruits) {
+        System.out.println(fruit);
+    }
+
+    }
+}
+
+/*输出结果如下：
+true
+true
+红富士苹果
+青苹果
+冰糖心苹果
+高山香蕉
+小米香蕉
+海南香蕉
+*/

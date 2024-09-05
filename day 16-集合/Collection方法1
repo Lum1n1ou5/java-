@@ -1,0 +1,24 @@
+//remove的基本写法
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class Test {
+    public static void main(String[] args) {
+        //创建数字集合
+        Collection<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        System.out.println(numbers.remove(3));
+        System.out.println(numbers.remove(6));
+
+        for (Integer number : numbers) {
+            System.out.println(number);
+        }
+    }
+}
+

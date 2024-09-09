@@ -22,3 +22,62 @@ public class Test {
     }
 }
 
+/-------------------------------------------------------------------------------------------
+//removeAll的基本写法，作用是删除集合中所有指定的数据
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class Text{
+    public static void main(String[] args) {
+        Collection<Integer> number = new ArrayList<>();
+        //创建一个数字的集合
+        number.add(1);
+        number.add(2);
+        number.add(3);
+        number.add(4);
+        number.add(5);
+        //要删除数字的集合
+        Collection<Integer> subNumber = new ArrayList<>();
+        subNumber.add(2);
+        subNumber.add(4);
+        subNumber.add(6);
+
+        System.out.println(number.removeAll(subNumber));
+        for (Integer num : number) {
+            System.out.println(num);
+    }
+ }
+}
+
+
+/---------------------------------------------------------------------------------------------------
+//retainAll的写法，retain的作用的保留在集合当中的数据
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class Text{
+    public static void main(String[] args) {
+        Collection<Integer> number = new ArrayList<>();
+        //创建一个数字的集合
+        number.add(1);
+        number.add(2);
+        number.add(3);
+        number.add(4);
+        number.add(5);
+        //要删除数字的集合
+        Collection<Integer> subNumber = new ArrayList<>();
+        subNumber.add(2);
+        subNumber.add(4);
+        subNumber.add(6);
+
+        boolean result = number.retainAll(subNumber);
+        System.out.println(result);
+        
+        for (Integer num : number) {
+            System.out.println(num);   
+        }
+        
+ }
+}

@@ -1,0 +1,66 @@
+//泛型的基本写法
+class IntegerPrinter<T,K>{
+    T content;
+    K content2;
+    IntegerPrinter(T content,K content2){
+        this.content = content;
+        this.content2 = content2;
+    }
+
+    void print() {
+        System.out.println(content);
+        System.out.println(content2);
+    }
+}
+
+public class Text{
+    public static void main(String[] args) {
+       IntegerPrinter<Integer,String> printer = new IntegerPrinter<>(123,"ABC");
+       //IntegerPrinter<String> printer2 = new IntegerPrinter<>("ABC");
+
+        printer.print();
+       
+    }
+} 
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+//有继承的泛型
+
+class Viechle{
+
+}
+
+class Car extends Viechle{
+
+}
+
+class Bus extends Viechle{
+    
+}
+
+
+
+
+class IntegerPrinter<T extends Viechle>{
+    T content;
+
+    IntegerPrinter(T content){
+        this.content = content;
+    
+    }
+
+    void print() {
+        System.out.println(content);
+    }
+}
+
+public class Text{
+    public static void main(String[] args) {
+       IntegerPrinter<Car> printer = new IntegerPrinter<>(new Car());
+       //IntegerPrinter<String> printer2 = new IntegerPrinter<>("ABC");
+
+        printer.print();
+       
+    }
+} 

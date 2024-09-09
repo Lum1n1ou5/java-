@@ -27,6 +27,9 @@ public class Text{
 //-------------------------------------------------------------------------------------------------------------------------
 //有继承的泛型
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Viechle{
 
 }
@@ -61,6 +64,23 @@ public class Text{
        //IntegerPrinter<String> printer2 = new IntegerPrinter<>("ABC");
 
         printer.print();
+
+        List<String> list = new ArrayList<>();
+        list.add("111");
+        list.add("222");
+
+        String item1 = list.get(0);
+        String item2 = list.get(1);
+        
+        System.out.println(item1);
+        System.out.println(item2);
+        
        
     }
+
+    public static <T> void print(T content){
+    //在函数返回体的前面加一个“<T>”就可以打印所有类型
+        System.out.println(content);
+    }
 } 
+

@@ -84,3 +84,16 @@ public class Text{
     }
 } 
 
+//-------------------------------------------------------------------------------------
+//这样就可以打印任何类型的数据
+
+ public class Text{
+    public static void main(String[] args) {
+        print(11, "ee");
+    }
+
+    private static <T,K> void print(T content,K content2){
+        System.out.println(content);
+        System.out.println(content2);
+    } 
+ }

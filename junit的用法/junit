@@ -1,0 +1,43 @@
+//可以用@Test来跳过main函数，一个一个测试
+
+import org.junit.Test;
+
+class Calculator{
+    public int add(int a,int b){
+        return a + b;
+    }
+
+    public int sub(int a,int b){
+        return a - b;
+    }
+
+    public int mul(int a,int b){
+        return a / b;
+    }
+}
+
+public class CaluTest{
+    @Test
+    public void testAdd(){
+        System.out.println("测试add方法");
+        Calculator cal = new Calculator();
+        int result = cal.add(1,2);
+        System.out.println(result);
+    }
+
+    @Test
+    public void testSub(){
+        System.out.println("测试sub方法");
+        Calculator cal = new Calculator();
+        int result = cal.sub(2,1);
+        System.out.println(result);
+    }
+
+    @Test
+    public void testMul(){
+        System.out.println("测试mul方法");
+        Calculator cal = new Calculator();
+        int result = cal.mul(2,0);
+        System.out.println(result);
+    }
+}

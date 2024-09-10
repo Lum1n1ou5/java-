@@ -1,0 +1,31 @@
+//--------------------------------------------------------------------------------------------------------
+//HashMap的特点就是无序
+/*
+输出结果如下：
+key:xiangjiao,value:Banana
+key:pingguo,value:Apple
+key:lizi,value:Pear
+key:xigua,value:Watermelon
+*/
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
+
+public class Text{
+    public static void main(String[] args) {
+        Map<String,String> fruits = new HashMap<>();
+
+        fruits.put("pingguo", "Apple");
+        fruits.put("xiangjiao", "Banana");
+        fruits.put("lizi", "Pear");
+        fruits.put("xigua", "Watermelon");
+        
+        fruits.forEach(new BiConsumer<String,String>() {
+            @Override
+            public void accept(String s,String s2){
+                System.out.println("key:" + s + ",value:" + s2);
+            }
+        });
+    }
+}

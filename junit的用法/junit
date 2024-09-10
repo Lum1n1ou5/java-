@@ -23,6 +23,8 @@ public class CaluTest{
         Calculator cal = new Calculator();
         int result = cal.add(1,2);
         System.out.println(result);
+        Assert.assertEquals(2,result);
+        //加入断言，可以对比预测结果跟实际结果
     }
 
     @Test

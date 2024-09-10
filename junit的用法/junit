@@ -1,5 +1,6 @@
-//可以用@Test来跳过main函数，一个一个测试
-
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 class Calculator{
@@ -17,6 +18,18 @@ class Calculator{
 }
 
 public class CaluTest{
+    @Before
+    //一般都会在before里面加入一些申请资源的代码：申请数据库资源，申请IO资源，申请网络资源
+    public void init(){
+        System.out.println("方法执行开始了");
+    }
+    //一般会在after里面加入释放资源的代码：释放数据库资源，释放IO资源，释放网络资源
+    @After
+    public void end(){
+        System.out.println("方法执行结束了");
+    }
+
+
     @Test
     public void testAdd(){
         System.out.println("测试add方法");
@@ -33,6 +46,7 @@ public class CaluTest{
         Calculator cal = new Calculator();
         int result = cal.sub(2,1);
         System.out.println(result);
+
     }
 
     @Test
